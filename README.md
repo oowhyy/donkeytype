@@ -1,0 +1,2 @@
+# donkeytype
+type words
