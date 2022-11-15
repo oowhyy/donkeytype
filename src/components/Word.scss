@@ -1,0 +1,18 @@
+.current {
+
+	&.wrong {
+		color: red;
+
+		&.over {
+			color: darkred;
+		}
+	}
+
+	&.correct {
+		color: green;
+	}
+
+	&.untyped {
+		color: yellow;
+	}
+}

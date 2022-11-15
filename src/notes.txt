@@ -1,0 +1,40 @@
+word types: finished current future
+letter types: untyped correct wrong
+flag: overtype
+
+all combinations:
+finished untyped
+finished untyped overtype
+finished correct
+finished correct overtype
+finished wrong
+finished wrong overtype
+current untyped
+current untyped overtype
+current correct
+current correct overtype
+current wrong
+current wrong overtype
+future untyped
+future untyped overtype
+future correct
+future correct overtype
+future wrong
+future wrong overtype
+
+possible combinations:
+
+
+finished correct
+finished wrong
+finished wrong overtype
+
+current untyped
+current correct
+current wrong
+current wrong overtype
+
+future untyped
+
+
+
