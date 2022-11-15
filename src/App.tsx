@@ -6,6 +6,7 @@ import Word from './components/Word'
 import { LetterStyleType, ILetter } from './types/LetterStyleType'
 
 function wordToLetters(target: string, cur: string): ILetter[] {
+   console.log(target, cur)
    let res: ILetter[] = [];
    let targetLegth = target.length;
    let currentLenght = cur.length;
@@ -52,8 +53,9 @@ function App() {
    useEffect(() => {
       let allWords = words.commonWords
       let wordCount = 50;
-      setWordList(new Array(wordCount).fill(' ').map((item) => allWords[Math.floor(Math.random() * allWords.length)]));
-      setCurWord(wordList[0])
+      let wrds = new Array(wordCount).fill(' ').map((item) => allWords[Math.floor(Math.random() * allWords.length)])
+      setWordList(wrds);
+      setCurWord(wrds[0])
       console.log(curWord);
    }, [])
    return (
