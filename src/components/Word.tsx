@@ -1,20 +1,27 @@
 import React from 'react'
+import wordToLetters from '../logic/styleGenerator';
 import { ILetter, LetterStyleType } from '../types/LetterStyleType';
 import './Word.scss'
 
 
+const enum WordTypes {
+   finished = 'finished',
+   current = 'current',
+   future = 'future',
+}
 interface WordProps {
-   letters: ILetter[]
+   typed?: string;
+   target: string;
+   type?: WordTypes;
 
 }
 
-const Word = ({ letters }: WordProps) => {
+const Word = ({ typed, target, type }: WordProps) => {
+   let letters = wordToLetters(target, typed || '')
    return (
       <>
-         {
-            letters.map((letter, index) =>
-               <span key={index} className={letter.style}>{letter.value}</span>)
-         }
+
+         {letters.map((l, ind) => <span key={ind} className={l.style}>{l.value}</span>)}
          <span> </span>
       </>
    )
