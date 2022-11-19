@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -25,12 +27,16 @@
 
 
 .card {
-  padding: 2em;
-  min-height: 200px;
+  padding: 0.5rem 1rem;
+  min-width: 200px;
+  height: 200px;
+  overflow: hidden;
   background: #1a1a1a;
   text-align: justify;
-  text-justify: auto;
+  text-justify: none;
   line-height: 2rem;
+  font-family: 'Roboto Mono', 'Courier new', monospace;
+
 }
 
 

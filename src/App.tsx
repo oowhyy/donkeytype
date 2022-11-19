@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import * as commonWordsList from './assets/commonWordsList.json';
 import React from 'react'
@@ -16,6 +16,7 @@ function App() {
    const [zipped, setZipped] = useState<WordProps[]>([])
    const [input, setInput] = useState('')
    const [wordList, setWordList] = useState<IWord[]>([])
+   const cardRef = useRef<HTMLDivElement>(null)
    // const testLetters = [{ value: 't', style: LetterStyleType.currentCorrect },
    // { value: 's', style: LetterStyleType.currentWrong }]
    let testWord = 'commit';
@@ -26,6 +27,7 @@ function App() {
       let zp = wrds.map((e, i) => ({ id: e.id, target: e.value, typed: null }))
       setZipped(zp)
       setCurWord(wrds[0])
+
    }, [])
    function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
       // user pressed space - handle word change 
@@ -36,11 +38,14 @@ function App() {
       setZipped(zp);
       // makes input controlled
       setInput(event.target.value)
+
+      console.log(cardRef.current?.innerHTML);
+
    }
 
    return (
       <div>
-         <div className="card">
+         <div className="card" ref={cardRef}>
             {
                zipped.map((el, ind) => <Word key={el.id} id={el.id} target={el.target} typed={el.typed} ></Word>)
             }
