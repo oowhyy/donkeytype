@@ -1,4 +1,10 @@
-export const enum LetterStyleType {
+
+export const enum WordType {
+	finished = 'finished',
+	current = 'current',
+	future = 'future',
+}
+export const enum LetterType {
 	finished = 'finished',
 	finishedWrong = 'finished wrong',
 	finishedWrongOver = 'finished wrong over',
@@ -9,7 +15,18 @@ export const enum LetterStyleType {
 	future = 'future'
 }
 
+export interface IWord {
+	id: number;
+	value: string;
+}
 export interface ILetter {
 	value: string;
-	style: LetterStyleType;
+	type: LetterType;
+}
+export interface WordProps {
+	id: number;
+	typed: string | null;
+	target: string;
+	type?: WordType;
+
 }
